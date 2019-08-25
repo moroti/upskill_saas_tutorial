@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 	root to: 'pages#home'
 	# Route to the about page
 	get 'about', to: 'pages#about'
+	resources :contacts
 end
