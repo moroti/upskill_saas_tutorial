@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
 	def new
+		# This is an instance variable
 		@contact = Contact.new
 	end
 
