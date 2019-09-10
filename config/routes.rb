@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
 	# Route to the home page
 	root to: 'pages#home'
+
+
+  devise_for :users, controllers: {registrations: 'users/registrations'}
 	# Route to the about page
 	get 'about', to: 'pages#about'
   # To generate all the possible 7 routes (actions that can be performed over a resource) in Rails
