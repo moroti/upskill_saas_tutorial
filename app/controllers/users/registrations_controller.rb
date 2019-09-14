@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # save with a special Stripe subscription function.
   # Otherwise Devise signs up users as usual.
   def create
-    super do |resources|
+    super do |resource|
       if params[:plan]
         resource.plan_id = params[:plan]
         if resource.plan_id == 2
