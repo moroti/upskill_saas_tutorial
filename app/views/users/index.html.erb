@@ -1,1 +1,52 @@
-List all the users
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <!-- <table class="table table-striped">
+        <caption>Community List</caption>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Job Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <% if user.profile %>
+              <tr>
+                <td><%= user.profile.id %></td>
+                <td><%= user.profile.last_name %></td>
+                <td><%= user.profile.first_name %></td>
+                <td><%= user.profile.job_title %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table> -->
+      <ul class="list-unstyled">
+        <% @users.each do |user| %>
+          <li>
+            <% if user.profile %>
+              <div class="well row <%= cycle('white-bg','') %> ">
+                <div class="col-sm-4">
+                  <% if user.profile.avatar %>
+                    <%= link_to user do %>
+                      <%= image_tag(user.profile.avatar.url, class: 'user-index-avatar') %>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div class="col-sm-8">
+                  <%= link_to user do %>
+                    <h2><%= user.profile.first_name %> <%= user.profile.last_name %> </h2>
+                  <% end %>
+                  <h3><%= user.profile.job_title %></h3>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
